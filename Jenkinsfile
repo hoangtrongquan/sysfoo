@@ -17,7 +17,7 @@ pipeline {
     stage('test') {
       agent {
         docker {
-          image '3.9.12-eclipse-temurin-17'
+          image 'maven:3.9.12-eclipse-temurin-17'
         }
 
       }
@@ -30,7 +30,7 @@ pipeline {
     stage('package') {
       agent {
         docker {
-          image '3.9.12-eclipse-temurin-17'
+          image 'maven:3.9.12-eclipse-temurin-17'
         }
 
       }

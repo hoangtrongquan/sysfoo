@@ -2,6 +2,12 @@ pipeline {
   agent any
   stages {
     stage('build') {
+      agent {
+        docker {
+          image '3.9.12-eclipse-temurin-17'
+        }
+
+      }
       steps {
         echo 'compile maven app'
         sh 'mvn compile'
@@ -9,6 +15,12 @@ pipeline {
     }
 
     stage('test') {
+      agent {
+        docker {
+          image '3.9.12-eclipse-temurin-17'
+        }
+
+      }
       steps {
         echo 'test maven app'
         sh 'mvn clean test'
@@ -16,6 +28,12 @@ pipeline {
     }
 
     stage('package') {
+      agent {
+        docker {
+          image '3.9.12-eclipse-temurin-17'
+        }
+
+      }
       steps {
         echo 'package maven app'
         sh '''# Truncate the GIT_COMMIT to the first 7 characters

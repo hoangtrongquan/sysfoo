@@ -71,7 +71,7 @@ mvn versions:commit'''
       steps {
         sh '''docker stop sysfoo || true
 docker rm sysfoo || true
-docker run -d -p 8954:8080 --name sysfoo sysfoo:latest'''
+docker run -d -p 8954:8080 --name sysfoo hoangquan2022/sysfoo:latest'''
       }
     }
 

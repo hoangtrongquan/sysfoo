@@ -4,21 +4,21 @@ pipeline {
         maven 'Maven 3.9.12'
     } 
     stages {
-        stage('one') {
+        stage('build') {
             steps {
                 echo 'compile maven app'
                 sh 'mvn compile'
             }
         }
 
-        stage('two') {
+        stage('test') {
             steps {
                 echo 'test maven app'
                 sh 'mvn clean test'
             }
         }
 
-        stage('three') {
+        stage('package') {
             steps {
                 echo 'package maven app'
                 sh 'mvn package -DskipTests'

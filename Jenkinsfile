@@ -67,6 +67,14 @@ mvn versions:commit'''
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh '''docker stop sysfoo || true
+docker rm sysfoo || true
+docker run -d -p 8954:8080 --name sysfoo sysfoo:latest'''
+      }
+    }
+
   }
   tools {
     maven 'Maven 3.9.12'

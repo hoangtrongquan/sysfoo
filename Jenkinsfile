@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('build') {
       agent {
+        label 'sysfoo'
         docker {
           image 'maven:3.9.12-eclipse-temurin-17'
         }
